@@ -1,3 +1,2 @@
-1. Ulozenie, printow i zmiennych ktore beda wpisywane do programu. Narazie same outputy + inputy
-2. Stworzenie iteracji z automatycznym dopisywaniem w nowym pliku
-3. Ulozenie instrukcji warunkowej czy chce jakies przywolac
+###CHANGES###
+1.05v

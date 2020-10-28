@@ -3,8 +3,8 @@ import time
 clear = lambda: os.system('cls')
 while 1:
     print("Witaj, w programie bez nazwy")
-    print("1-zarejestruj się")
-    print("2-zaloguj się")
+    print("1-zaloguj się")
+    print("2-zarejestruj się")
     print("3-zamknij program")
     odp1=input()
     odp1=int(odp1)

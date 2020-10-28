@@ -6,41 +6,42 @@ while 1:
     print("1-zarejestruj się")
     print("2-zaloguj się")
     print("3-zamknij program")
-    choice=input()
-    choice=int(choice)
+    odp1=input()
+    odp1=int(odp1)
     clear()
     time.sleep(1)
     plik = open("bazadanych.txt",'r+')
-    if choice == 1:
-        while 1:
-            rlogin=input("Podaj login: ")
-            if rlogin in ("bazadanych.txt"):
-                bazav2={login:rlogin,password:rpassword}
-                print("Login zajęty")
-                clear()
-                time.sleep(1)
-            else:
-                plik.write(rlogin)
-                rpassword=input("Podaj hasło: ")
-                rpasswordAgree=input("Podaj hasło ponownie: ")
-                if rpassword == rpasswordAgree:
-                    print("Zostałeś zarejetrowany")
-                else:
-                    print("Hasła nie są takie same")
-            break
-    elif choice==2:
-    login=input("Podaj login: ")
-        if login != rlogin:
+    if odp1 == 1:
+        odp2=input("Podaj login: ")
+        if x!= odp2:
             print("Nie poprawny login")
-        elif password != rpassword:
-            password=input("Podaj hasło:")
-            if password == rpassword:
+        elif x==odp2:
+            odp3=input("Podaj hasło:")
+            if y==odp2:
                 break
-        print("Zalogowano pomyślnie")
-    elif choice==3:
+    elif odp1==2:
+        while 1:
+            x=input("Podaj login: ")
             try:
-                plik.close()
-            except:
+                if x in bazav2:
+                    print("Login zajęty")
+                    clear()
+                    time.sleep(1)
+                else:
+                    plik = open("bazadanych.txt",'r+')
+                    break
+        while 1:
+            odp2=input("Podaj hasło: ")
+            odp3=input("Podaj hasło ponownie: ")
+            if odp2 == odp3:
+                print("Zostałeś zarejetrowany")
+                plik=write("bazadanych",'a+')
+                bazav2={x:login,y:hasło}
                 break
+            else:
+                print("Hasła nie są takie same")         
+    elif odp1==3:
+            plik.close()
+            break
     else:
         print("Nie ma takiej opcji")

@@ -3,8 +3,8 @@ import time
 clear = lambda: os.system('cls')
 while 1:
     print("Witaj, w programie bez nazwy")
-    print("1-zaloguj się")
-    print("2-zarejestruj się")
+    print("1-zarejestruj się")
+    print("2-zaloguj się")
     print("3-zamknij program")
     choice=input()
     choice=int(choice)
@@ -12,19 +12,9 @@ while 1:
     time.sleep(1)
     plik = open("bazadanych.txt",'r+')
     if choice == 1:
-        login=input("Podaj login: ")
-        if login != rlogin:
-            print("Nie poprawny login")
-        elif password != rpassword:
-            password=input("Podaj hasło:")
-            if password == rpassword:
-                break
-        print("Zalogowano pomyślnie")
-    elif choice==2:
         while 1:
             rlogin=input("Podaj login: ")
             if rlogin in ("bazadanych.txt"):
-                bazav2={login:rlogin,password:rpassword}
                 print("Login zajęty")
                 clear()
                 time.sleep(1)
@@ -36,7 +26,17 @@ while 1:
                     print("Zostałeś zarejetrowany")
                 else:
                     print("Hasła nie są takie same")
-            break
+            break        
+    elif choice==2:
+        login=input("Podaj login: ")
+        if login != rlogin:
+            print("Nie poprawny login")
+        elif password != rpassword:
+            password=input("Podaj hasło:")
+            if password == rpassword:
+                break
+        print("Zalogowano pomyślnie")
+        bazav2={login:rlogin,password:rpassword}
     elif choice==3:
             try:
                 plik.close()
@@ -44,4 +44,5 @@ while 1:
                 break
     else:
         print("Nie ma takiej opcji")
+
 

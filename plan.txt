@@ -1,5 +1,6 @@
 ###CHANGES###
-1.05v Nothing
-1.06v Added some names to bazadanych.txt, for later studying.
-1.07v Added library - time, os. Defined function clear(). Input has been set after reading dictionary as pause.
-1.08v Added Test.py - upgraded version of !main.py !!!Replacement functions needed!!!
+1.05 v Nothing
+1.06 v Added some names to bazadanych.txt, for later studying.
+1.07 v Added library - time, os. Defined function clear(). Input has been set after reading dictionary as pause.
+1.08 v Added Test.py - upgraded version of !main.py !!!Replacement functions needed!!!
+1.08a v 

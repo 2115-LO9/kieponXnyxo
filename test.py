@@ -19,30 +19,39 @@ while 1:
                 clear()
                 time.sleep(1)
             else:
-                plik.write(rlogin)
                 rpassword=input("Podaj hasło: ")
                 rpasswordAgree=input("Podaj hasło ponownie: ")
                 if rpassword == rpasswordAgree:
                     print("Zostałeś zarejetrowany")
+                    plik.write(rlogin)
+                    plik.write(rpassword)
                 else:
                     print("Hasła nie są takie same")
+                    print("Spróbuj ponownie")
             break        
     elif choice==2:
         login=input("Podaj login: ")
-        if login != rlogin:
-            print("Nie poprawny login")
-        elif password != rpassword:
+        if login == rlogin:
             password=input("Podaj hasło:")
             if password == rpassword:
+                print("Zalogowano pomyślnie")
+            else:
+                print("Hasło jest nie poprawne")
+        else:
+            print("Nie poprawny login")
+            if password == rpassword:
                 break
-        print("Zalogowano pomyślnie")
+
         bazav2={login:rlogin,password:rpassword}
     elif choice==3:
             try:
                 plik.close()
+                break
             except:
                 break
-    else:
-        print("Nie ma takiej opcji")
+    elif choice != 1 or choice != 2 or choice != 3:
+        print("Nie znam tej funkcji, wybierz proszę od 1 - 3")
+        time.sleep(1)
+        clear()
 
 

@@ -6,42 +6,41 @@ while 1:
     print("1-zaloguj się")
     print("2-zarejestruj się")
     print("3-zamknij program")
-    odp1=input()
-    odp1=int(odp1)
+    choice=input()
+    choice=int(choice)
     clear()
     time.sleep(1)
     plik = open("bazadanych.txt",'r+')
-    if odp1 == 1:
-        odp2=input("Podaj login: ")
-        if x!= odp2:
-            print("Nie poprawny login")
-        elif x==odp2:
-            odp3=input("Podaj hasło:")
-            if y==odp2:
-                break
-    elif odp1==2:
+    if choice == 1:
         while 1:
-            x=input("Podaj login: ")
-            try:
-                if x in bazav2:
-                    print("Login zajęty")
-                    clear()
-                    time.sleep(1)
-                else:
-                    plik = open("bazadanych.txt",'r+')
-                    break
-        while 1:
-            odp2=input("Podaj hasło: ")
-            odp3=input("Podaj hasło ponownie: ")
-            if odp2 == odp3:
-                print("Zostałeś zarejetrowany")
-                plik=write("bazadanych",'a+')
-                bazav2={x:login,y:hasło}
-                break
+            rlogin=input("Podaj login: ")
+            if rlogin in ("bazadanych.txt"):
+                bazav2={login:rlogin,password:rpassword}
+                print("Login zajęty")
+                clear()
+                time.sleep(1)
             else:
-                print("Hasła nie są takie same")         
-    elif odp1==3:
-            plik.close()
+                plik.write(rlogin)
+                rpassword=input("Podaj hasło: ")
+                rpasswordAgree=input("Podaj hasło ponownie: ")
+                if rpassword == rpasswordAgree:
+                    print("Zostałeś zarejetrowany")
+                else:
+                    print("Hasła nie są takie same")
             break
+    elif choice==2:
+    login=input("Podaj login: ")
+        if login != rlogin:
+            print("Nie poprawny login")
+        elif password != rpassword:
+            password=input("Podaj hasło:")
+            if password == rpassword:
+                break
+        print("Zalogowano pomyślnie")
+    elif choice==3:
+            try:
+                plik.close()
+            except:
+                break
     else:
         print("Nie ma takiej opcji")

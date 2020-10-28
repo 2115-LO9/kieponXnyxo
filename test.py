@@ -7,10 +7,11 @@ while 1:
     print("2-zarejestruj się")
     print("3-zamknij program")
     odp1=input()
+    odp1=int(odp1)
     clear()
     time.sleep(1)
+    plik = open("bazadanych.txt",'r+')
     if odp1 == 1:
-        plik = open("bazadanych.txt",'r+')
         odp2=input("Podaj login: ")
         if x!= odp2:
             print("Nie poprawny login")
@@ -20,25 +21,27 @@ while 1:
                 break
     elif odp1==2:
         while 1:
-            baza.v2={x:login,y:hasło}
-            odp1=input("Podaj login: ")
-            if odp1 in bazadanych.txt:
-                print("Login zajęty")
-                clear()
-                time.sleep(1)
-            else:
-                plik=write("bazadanych.txt",'a+')
+            x=input("Podaj login: ")
+            try:
+                if x in bazav2:
+                    print("Login zajęty")
+                    clear()
+                    time.sleep(1)
+                else:
+                    plik = open("bazadanych.txt",'r+')
+                    break
+        while 1:
+            odp2=input("Podaj hasło: ")
+            odp3=input("Podaj hasło ponownie: ")
+            if odp2 == odp3:
+                print("Zostałeś zarejetrowany")
+                plik=write("bazadanych",'a+')
+                bazav2={x:login,y:hasło}
                 break
-            while 1:
-                    odp2=input("Podaj hasło: ")
-                    odp3=input("Podaj hasło ponownie: ")
-                    if odp2 == odp3:
-                        print("Zostałeś zarejetrowany")
-                    else:
-                        print("Hasła nie są takie same")
+            else:
+                print("Hasła nie są takie same")         
     elif odp1==3:
             plik.close()
             break
     else:
         print("Nie ma takiej opcji")
-
